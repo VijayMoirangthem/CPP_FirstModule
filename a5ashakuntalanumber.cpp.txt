@@ -1,0 +1,39 @@
+/* A5. Write a C++ program with following options:
+	a. Find a number is Shakuntala Devi's number or not. Ex: 145
+*/
+
+#include <iostream>
+using namespace std;
+
+int facto(int x);
+
+int main() {
+    int input;
+    cout << "Enter the number: ";
+    cin >> input;
+
+    if (facto(input) == input) {
+        cout << input << " is a Strong number \n";
+    } else {
+        cout << input << " is not a Strong number \n";
+    }
+
+    return 0;
+}
+
+int facto(int x) {
+    int temp = x;
+    int sum = 0;
+
+    while (x > 0) {
+        int fact = 1;
+        int rem = x % 10;
+        x = x / 10;
+        for (int i = 1; i <= rem; i++) {
+            fact = fact * i;
+        }
+        sum = sum + fact;
+    }
+
+    return sum;
+}

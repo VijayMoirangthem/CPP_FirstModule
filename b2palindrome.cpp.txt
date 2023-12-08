@@ -1,0 +1,20 @@
+#include <iostream>
+#include <math.h>
+#include <algorithm>
+
+using namespace std;
+
+main() {
+    string A, B;
+    cout << "Enter the string \n";
+    cin >> A;
+    B = A;
+    reverse(B.begin(),B.end());
+    if (A == B){
+        cout << A << " is a palindrome \n";
+    }
+    else {
+        cout << A << " is not a palindrome \n";
+    }
+    return 0;
+}

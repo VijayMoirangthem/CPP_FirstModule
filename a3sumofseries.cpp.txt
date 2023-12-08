@@ -1,0 +1,42 @@
+/* A3. Write a program in C++ to calculate the series (1) + (1+2) + (1+2+3) + (1+2+3+4) + ... + (1+2+3+4+...+n).
+Sample Output:
+Input the value for nth term: 5
+1 = 1
+1+2 = 3
+1+2+3 = 6
+1+2+3+4 = 10
+1+2+3+4+5 = 15
+The sum of the above series is: 35
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    // n as input, and total as total sum of all the series
+    int n, total = 0;
+
+    cout << "Enter the value for nth term: ";
+    cin >> n;
+
+    // To calculate and display each term of the series
+    for (int i = 1; i <= n; i++) {
+        int sum = 0; // sum of individual line
+        
+        // To calculate and display the partial sum of terms in the current series
+        for (int j = 1; j <= i; j++) {
+            cout << j;
+            if (j != i) {
+                cout << " + ";
+            }
+            sum = sum + j;
+            total = total + sum;
+        }
+        cout << " = " << sum << "\n";
+    }
+
+    // Display the sum of the entire series
+    cout << "The sum of the above series is: " << total << "\n";
+
+    return 0; 
+}

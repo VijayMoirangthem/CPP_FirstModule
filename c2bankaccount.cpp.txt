@@ -1,0 +1,84 @@
+// Write a C++ program to implement a class called BankAccount that has private member variable for account number and balance. Include member functions to deposit and withdraw money from the account.
+#include <iostream>
+using namespace std;
+
+class BankAccount {
+    private: int accNum;
+    private: int balance;
+    
+    public: BankAccount(int a, int b){
+        accNum = a;
+        balance =b;
+    }
+    
+    void setaccNum(int a){
+        accNum = a;
+    }
+    
+    int getaccNum(){
+        return accNum;
+    }
+    
+    void setbalance(int b){
+        balance = b;
+    }
+    
+    int getbalance(){
+        return balance;
+    }
+
+void deposit(int amount){
+    balance += amount;
+}
+
+void withdraw(int amount){
+    if (balance >= amount){
+    balance -= amount;     
+    }
+    else {
+        cout << "Insufficient balance. \n";
+    }
+}
+
+void display(int amount){
+    cout << balance << "\n";
+}
+};
+
+int main() {
+    int choice, amount, balance, accNum;
+    
+    // Create object BankAccount
+    BankAccount bankAccount(160 , 100000);
+    
+    cout << "Bank Account number: " << bankAccount.getaccNum() << "\n";
+    cout << "Current Bank Balance: " << bankAccount.getbalance() << "\n";
+    
+    while(1) {
+        int amount;
+        cout << "Select option: \n";
+        cout << "1. Deposit \n";
+        cout << "2. Withdraw \n"; 
+        cout << "3. Display Balance \n";
+        cin >> choice;
+        
+        if (1 == choice) {
+            cout << "Enter amount to deposit \n";
+            cin >> amount;
+            bankAccount.deposit(amount);
+        }
+        else if (2 == choice) {
+            cout << "Enter amount to withdraw \n";
+            cin >> amount;
+            bankAccount.withdraw(amount);
+        }
+        else if (3 == choice) {
+            bankAccount.display(amount);
+        }
+        else {
+            cout << "Invalid choice. \n";
+        }
+    } 
+    
+    return 0;
+}

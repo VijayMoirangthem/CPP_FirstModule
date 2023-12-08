@@ -1,0 +1,90 @@
+/******************************************************************************
+
+F: Inheritance
+
+ F1. how to read and print students information using two classes and simple inheritance using C++ program?
+  Solution: https://www.includehelp.com/cpp-programs/cpp-inheritance-programs-to-read-and-print-student-information-using-two-classes-and-simple-inheritance.aspx
+  
+ F2. C++ program to demonstrate example of hierarchical inheritance to get square and cube of a number
+  Solution : https://www.includehelp.com/cpp-programs/cpp-inheritance-program-to-demonstrate-example-of-hierarchical-square-and-cube-of-a-number-inheritance.aspx?ref=rp
+
+ F3. C++ program to read and print employee information with department and pf information using hierarchical inheritance
+  Solution : https://www.includehelp.com/cpp-programs/cpp-inheritance-program-to-read-and-print-employee-information-with-department-and-pf-using-hierarchical-inheritance.aspx?ref=rp
+
+*******************************************************************************/
+/* Author: Vijay Moirangthem */
+
+// Adding libraries
+#include <iostream>
+
+using namespace std;
+
+class Student {
+    
+    private: 
+             char name[50];
+             int age;
+             char gender;
+    
+    public:
+             
+             void getStudent(void);
+             void setStudent(void);
+};
+
+void Student :: getStudent(void)
+{
+    cout << "Enter Name: \n";
+    cin >> name;
+    cout << "Enter age \n";
+    cin >> age;
+    cout << "Enter gender (M/F) \n";
+    cin >> gender;
+};
+
+void Student :: setStudent(void)
+{
+    cout << "Name:" << name << "\n";
+    cout << "Age:" << age << "\n";
+    cout << "Gender:" << gender << "\n";
+};
+
+class Result : public Student {
+    
+    private: 
+             char subject[50];
+             int marks;
+    
+    public:
+             
+             void getResult(void);
+             void setResult(void);
+};
+
+void Result :: getResult(void)
+{
+    cout << "Enter Subject: \n";
+    cin >> subject;
+    cout << "Enter Marks \n";
+    cin >> marks;
+};
+
+void Result :: setResult(void)
+{
+    cout << "Subject:" << subject << "\n";
+    cout << "Marks:" << marks << "\n";
+};
+
+// Application
+int main()
+{
+    Result res;
+    
+    res.getStudent();
+    res.getResult();
+    
+    res.setStudent();
+    res.setResult();
+    
+    return 0;
+}

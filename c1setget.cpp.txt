@@ -1,0 +1,82 @@
+// c1) create a class called Person that has private member variables for name, age and country. Implement member functions to set and get the values of these variable.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person{
+    private: string name;
+    private: int age;
+    private: string country;
+    
+    public: Person(string n, int a, string c){
+        name = n;
+        age = a;
+        country =c;
+    }
+    
+    void setName(string n){     // why setters are void and getters are datatypes
+        name = n;
+    }
+    
+    string getName() {
+        return name;
+    }
+    
+    void setAge(int a){
+        age =a;   
+    }
+    
+    int getAge(){
+        return age;
+    }
+    
+    void setCountry(string c){
+        country = c;
+    }
+    
+    string getCountry(){
+        return country;
+    }
+};
+
+int main() {
+    string name, country;
+    int age;
+    
+    cout << "Enter name: \n";
+    cin >> name;
+    cout << "Enter age: \n";
+    cin >> age;
+    cout << "Enter country: \n";
+    cin >> country;
+    
+    Person person(name, age, country); //object created
+    
+    // Access and display the object Person data using getter
+    
+    cout << "Name: " << person.getName() << "\n";
+    cout << "Age: " << person.getAge() << "\n";
+    cout << "Country: " << person.getCountry() << "\n";
+    
+    // Modify the objects's data using setter
+    
+    person.setName(name);
+    person.setAge(age);
+    person.setCountry(country);
+    
+    cout << "Enter name: \n";
+    cin >> name;
+    cout << "Enter age: \n";
+    cin >> age;
+    cout << "Enter country: \n";
+    cin >> country;
+    
+    // Modified Data
+    cout <<"Modified Data: \n";
+    cout << "Name: " << person.getName() << "\n";
+    cout << "Age: " << person.getAge() << "\n";
+    cout << "Country: " << person.getCountry() << "\n";
+    
+    return 0;
+}

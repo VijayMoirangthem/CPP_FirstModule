@@ -1,0 +1,58 @@
+// d1 stack overloading
+
+#include<iostream>
+
+using namespace std;
+
+int arr[5], choice;
+int top = -1;
+
+int push(int ele) {
+    if (top < 4){
+        top++;
+        arr[top] = ele;
+    }
+    else {
+        cout << "\n Stack overflow \n";
+    }
+}
+
+void pop() {
+    if (top <= -1){
+        cout << "Stack underflow";
+    }
+    else {
+        cout << "Removed element is " << arr[top] << "\n";
+        top--;
+    }
+}
+
+void display() {
+    for (int i = 0; i <= top; i++){
+        cout << arr[i] << "\t";
+    }
+    cout << "\n";
+}
+
+int main() {
+    while(1){
+    cout << "Select a choice \n";
+    cout << "1) Push \n";
+    cout << "2) Pop \n";
+    cout << "3) Display \n";
+    cin >> choice;
+    
+    if (1 == choice){
+        int ele;
+        cout << "Enter a number \n";
+        cin >> ele;
+        push(ele);
+    }
+    else if (2 == choice){
+        pop();
+    }
+    else if (3 == choice){
+        display();
+    }
+    }
+}

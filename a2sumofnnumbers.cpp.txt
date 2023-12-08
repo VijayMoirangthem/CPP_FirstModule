@@ -1,0 +1,26 @@
+/* A2. Write a program in C++ to display n terms of natural numbers and their sum.
+Sample Output:
+Input a number of terms: 7
+The natural numbers upto 7th terms are:
+1 2 3 4 5 6 7
+The sum of the natural numbers is: 28
+*/
+
+#include<iostream>
+using namespace std;
+
+int main() {
+    int n, sum = 0;
+
+    // n is the input
+    cout << "Enter the number of natural numbers to sum: ";
+    cin >> n;
+
+    for (int i = 1; i <= n; i++) {
+        sum = sum + i;
+    }
+
+    cout << "Sum of the first " << n << " natural numbers is " << sum << "\n";
+
+    return 0; // Successful execution indication
+}
